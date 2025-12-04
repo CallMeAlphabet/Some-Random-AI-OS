@@ -1,1 +1,9 @@
-
+NAME="MiniUnix"
+VERSION="2.1 LTS"
+ID=miniunix
+ID_LIKE=debian
+PRETTY_NAME="MiniUnix 2.1 LTS"
+VERSION_ID="2.1"
+HOME_URL="https://miniunix.org/"
+SUPPORT_URL="https://support.miniunix.org/"
+BUG_REPORT_URL="https://bugs.miniunix.org/"
