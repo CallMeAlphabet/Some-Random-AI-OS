@@ -1,1 +1,86 @@
-
+{
+  "command_not_found": {
+    "template": "bash: {command}: command not found",
+    "hint": "Try 'help' to see available commands"
+  },
+  "no_such_file": {
+    "template": "{command}: {file}: No such file or directory",
+    "hint": "Check the path and filename"
+  },
+  "permission_denied": {
+    "template": "{command}: {file}: Permission denied",
+    "hint": "You may need elevated privileges (sudo or root)"
+  },
+  "not_a_directory": {
+    "template": "{command}: {path}: Not a directory",
+    "hint": "The path component is not a directory"
+  },
+  "is_a_directory": {
+    "template": "{command}: {path}: Is a directory",
+    "hint": "Use -r or -R for recursive operations on directories"
+  },
+  "file_exists": {
+    "template": "{command}: cannot create {file}: File exists",
+    "hint": "File already exists, use -f to force"
+  },
+  "invalid_option": {
+    "template": "{command}: invalid option -- '{option}'",
+    "hint": "Try '{command} --help' for more information"
+  },
+  "missing_operand": {
+    "template": "{command}: missing operand",
+    "hint": "Try '{command} --help' for more information"
+  },
+  "directory_not_empty": {
+    "template": "{command}: {directory}: Directory not empty",
+    "hint": "Use 'rm -r' to remove non-empty directories"
+  },
+  "invalid_argument": {
+    "template": "{command}: invalid argument '{argument}'",
+    "hint": "Check command syntax and arguments"
+  },
+  "operation_not_permitted": {
+    "template": "{command}: {file}: Operation not permitted",
+    "hint": "This operation requires special permissions"
+  },
+  "disk_full": {
+    "template": "{command}: {file}: No space left on device",
+    "hint": "Free up disk space or use a different location"
+  },
+  "too_many_arguments": {
+    "template": "{command}: too many arguments",
+    "hint": "Check the command syntax"
+  },
+  "broken_pipe": {
+    "template": "{command}: write error: Broken pipe",
+    "hint": "The pipe was closed unexpectedly"
+  },
+  "segmentation_fault": {
+    "template": "Segmentation fault (core dumped)",
+    "hint": "The program crashed"
+  },
+  "out_of_memory": {
+    "template": "{command}: Cannot allocate memory",
+    "hint": "System is out of memory"
+  },
+  "read_only_filesystem": {
+    "template": "{command}: {file}: Read-only file system",
+    "hint": "Cannot modify files on read-only filesystem"
+  },
+  "file_too_large": {
+    "template": "{command}: {file}: File too large",
+    "hint": "File exceeds maximum size limit"
+  },
+  "network_unreachable": {
+    "template": "{command}: Network is unreachable",
+    "hint": "Check network connection"
+  },
+  "connection_refused": {
+    "template": "{command}: Connection refused",
+    "hint": "The remote host refused the connection"
+  },
+  "host_not_found": {
+    "template": "{command}: {host}: Name or service not known",
+    "hint": "Cannot resolve hostname"
+  }
+}
