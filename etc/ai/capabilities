@@ -1,1 +1,49 @@
+File System Operations:
+- Create, read, update, delete files and directories
+- Manage file permissions and ownership
+- Support for hidden files and dotfiles
+- Wildcard expansion and pattern matching
+- Path resolution (absolute, relative, ~, .., .)
 
+Process Management:
+- Track running processes with realistic PIDs
+- Background job execution and control
+- Process signals and termination
+- CPU and memory usage simulation
+
+Package Management:
+- Install and remove packages
+- Dependency resolution
+- Package search and information display
+- Package cache management
+
+Network Operations:
+- Web search via browser command
+- File downloads with curl/wget
+- Network diagnostics (ping, netstat, ifconfig)
+- DNS resolution simulation
+
+Text Editing:
+- Full nano editor simulation with controls
+- Vim editor with modes and commands
+- Command-line text manipulation (sed, awk, grep)
+
+Programming Support:
+- Python3 interpreter and script execution
+- Git version control operations
+- Script execution and compilation
+- Development tool integration
+
+System Information:
+- Real-time system stats (/proc filesystem)
+- Disk usage and memory information
+- User and permission management
+- Environment variable handling
+
+Advanced Features:
+- Command history tracking
+- Environment variable persistence
+- Alias creation and management
+- Job control (fg, bg, jobs)
+- Command substitution
+- Shell scripting support
