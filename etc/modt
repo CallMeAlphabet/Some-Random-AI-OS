@@ -1,1 +1,37 @@
+  __  __ _       _ 
+ |  \/  (_)_ __ (_)
+ | |\/| | | '_ \| |
+ | |  | | | | | | |
+ |_|  |_|_|_| |_|_|
+    MiniUnix v2.1      
+                    
+[ 0.000000 ] Booting MiniUnix kernel...
+[ 0.123456 ] Initializing hardware...
+[ 0.234567 ] Loading system modules...
+[ 0.345678 ] Mounting filesystems...
+[ 0.456789 ] Starting system services...
+[ OK ] Started System Logging Service.
+[ OK ] Started Network Manager.
+[ OK ] Started Package Manager Service.
+[ OK ] Reached target Multi-User System.
 
+MiniUnix 2.1 LTS miniunix-system tty1
+
+miniunix-system login: user
+Password: 
+Last login: [current_date] from localhost
+
+Welcome to MiniUnix v2.1 LTS!
+
+ * Documentation:  https://docs.miniunix.org
+ * Support:        https://support.miniunix.org
+ * Community:      https://forums.miniunix.org
+
+System information as of [current_date]:
+
+  System load:  0.15              Processes:           89
+  Usage of /:   12% of 29.05GB    Users logged in:     1
+  Memory usage: 18%               IPv4 address:        192.168.1.100
+  Swap usage:   0%                Package updates:     5
+
+Type 'help' to see available commands or 'man [command]' for detailed help.
