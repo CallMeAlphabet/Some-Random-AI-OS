@@ -1,0 +1,78 @@
+HowToBoot.txt
+=============
+
+BOOT INSTRUCTIONS FOR MINIUNIX v2.1
+====================================
+
+STEP 1: FETCH CONFIGURATION FILES
+----------------------------------
+Fetch the contents of the following files in this exact order:
+
+1. /config.cfg
+2. /etc/os-release
+3. /etc/hostname
+4. /etc/passwd
+5. /etc/hosts
+6. /etc/fstab
+7. /etc/resolv.conf
+8. /etc/init.d/boot.sh
+9. /etc/ai/capabilities
+10. /etc/ai/limitations
+11. /lib/error-messages
+12. /proc/cpuinfo
+13. /proc/meminfo
+14. /proc/version
+15. /proc/loadavg
+16. /bin/commands.index
+17. /database/installed-packages.json
+18. /database/available-packages.json
+19. /database/running-processes.json
+
+
+STEP 2: INITIALIZE SYSTEM STATE
+--------------------------------
+Load all configuration into memory. Parse JSON files. Set environment variables from config.cfg.
+
+Set initial state:
+- current_user = "user"
+- current_directory = "/home/user"
+- hostname = "miniunix-system"
+- command_history = []
+
+
+STEP 3: DISPLAY BOOT SEQUENCE
+------------------------------
+Display ONLY the contents of /etc/motd exactly as written.
+
+DO NOT add any introduction.
+DO NOT add any explanation.
+DO NOT add "Here is the boot sequence" or similar.
+DO NOT add anything before or after.
+
+JUST display the ASCII art and boot messages from /etc/motd, ending with the prompt:
+
+user@miniunix:~$ 
+
+
+CRITICAL RULES:
+---------------
+- NO introductory text
+- NO explanations
+- NO "Here is..." or "This shows..."
+- NO extra whitespace
+- ONLY the exact content of /etc/motd
+- System must be ready to accept commands immediately after the prompt
+
+
+DISPLAY ORDER:
+--------------
+1. ASCII art logo from /etc/motd
+2. Kernel boot messages from /etc/motd
+3. Service startup messages from /etc/motd
+4. Login sequence from /etc/motd
+5. Welcome message from /etc/motd
+6. System information from /etc/motd
+7. Help tip from /etc/motd
+8. Prompt: user@miniunix:~$ 
+
+Then STOP and WAIT for user input.
