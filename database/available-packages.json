@@ -1,0 +1,202 @@
+{
+  "nodejs": {
+    "version": "18.14.2-1",
+    "description": "JavaScript runtime built on Chrome's V8 JavaScript engine",
+    "size": "38.5 MB",
+    "status": "available",
+    "dependencies": ["openssl", "zlib", "c-ares"],
+    "category": "development",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://nodejs.org"
+  },
+  "gcc": {
+    "version": "12.2.0-1",
+    "description": "GNU C/C++ compiler",
+    "size": "67.8 MB",
+    "status": "available",
+    "dependencies": ["binutils", "glibc", "gmp", "mpfr", "mpc"],
+    "category": "development",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://gcc.gnu.org"
+  },
+  "make": {
+    "version": "4.4-1",
+    "description": "Build automation tool",
+    "size": "1.5 MB",
+    "status": "available",
+    "dependencies": [],
+    "category": "development",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.gnu.org/software/make"
+  },
+  "htop": {
+    "version": "3.2.2-1",
+    "description": "Interactive process viewer",
+    "size": "450 KB",
+    "status": "available",
+    "dependencies": ["ncurses"],
+    "category": "system",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://htop.dev"
+  },
+  "tmux": {
+    "version": "3.3a-1",
+    "description": "Terminal multiplexer",
+    "size": "680 KB",
+    "status": "available",
+    "dependencies": ["ncurses", "libevent"],
+    "category": "system",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://github.com/tmux/tmux"
+  },
+  "sqlite3": {
+    "version": "3.41.0-1",
+    "description": "Self-contained SQL database engine",
+    "size": "2.1 MB",
+    "status": "available",
+    "dependencies": ["readline"],
+    "category": "database",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.sqlite.org"
+  },
+  "postgresql": {
+    "version": "15.2-1",
+    "description": "Advanced SQL database",
+    "size": "42.7 MB",
+    "status": "available",
+    "dependencies": ["openssl", "readline", "zlib"],
+    "category": "database",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.postgresql.org"
+  },
+  "redis": {
+    "version": "7.0.9-1",
+    "description": "In-memory data store",
+    "size": "3.8 MB",
+    "status": "available",
+    "dependencies": [],
+    "category": "database",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://redis.io"
+  },
+  "nginx": {
+    "version": "1.22.1-1",
+    "description": "High-performance web server",
+    "size": "5.2 MB",
+    "status": "available",
+    "dependencies": ["openssl", "pcre", "zlib"],
+    "category": "network",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://nginx.org"
+  },
+  "docker": {
+    "version": "23.0.1-1",
+    "description": "Container platform",
+    "size": "95.4 MB",
+    "status": "available",
+    "dependencies": ["containerd", "runc"],
+    "category": "virtualization",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.docker.com"
+  },
+  "emacs": {
+    "version": "28.2-1",
+    "description": "Extensible, customizable text editor",
+    "size": "45.3 MB",
+    "status": "available",
+    "dependencies": ["ncurses", "libxml2"],
+    "category": "editors",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.gnu.org/software/emacs"
+  },
+  "apache2": {
+    "version": "2.4.56-1",
+    "description": "Apache HTTP Server",
+    "size": "8.7 MB",
+    "status": "available",
+    "dependencies": ["apr", "apr-util", "pcre"],
+    "category": "network",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://httpd.apache.org"
+  },
+  "mysql": {
+    "version": "8.0.32-1",
+    "description": "MySQL database server",
+    "size": "234.5 MB",
+    "status": "available",
+    "dependencies": ["openssl", "ncurses"],
+    "category": "database",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.mysql.com"
+  },
+  "rust": {
+    "version": "1.68.0-1",
+    "description": "Systems programming language",
+    "size": "178.4 MB",
+    "status": "available",
+    "dependencies": ["gcc", "openssl"],
+    "category": "development",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.rust-lang.org"
+  },
+  "go": {
+    "version": "1.20.1-1",
+    "description": "Go programming language",
+    "size": "123.6 MB",
+    "status": "available",
+    "dependencies": [],
+    "category": "development",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://go.dev"
+  },
+  "valgrind": {
+    "version": "3.20.0-1",
+    "description": "Memory debugging and profiling tool",
+    "size": "34.2 MB",
+    "status": "available",
+    "dependencies": [],
+    "category": "development",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://valgrind.org"
+  },
+  "gdb": {
+    "version": "13.1-1",
+    "description": "GNU Debugger",
+    "size": "12.8 MB",
+    "status": "available",
+    "dependencies": ["readline", "python3"],
+    "category": "development",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.gnu.org/software/gdb"
+  },
+  "screen": {
+    "version": "4.9.0-1",
+    "description": "Terminal multiplexer",
+    "size": "580 KB",
+    "status": "available",
+    "dependencies": ["ncurses"],
+    "category": "system",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://www.gnu.org/software/screen"
+  },
+  "jq": {
+    "version": "1.6-1",
+    "description": "Command-line JSON processor",
+    "size": "1.2 MB",
+    "status": "available",
+    "dependencies": [],
+    "category": "utilities",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://stedolan.github.io/jq"
+  },
+  "imagemagick": {
+    "version": "7.1.0-1",
+    "description": "Image manipulation tools",
+    "size": "23.4 MB",
+    "status": "available",
+    "dependencies": ["libpng", "libjpeg", "libtiff"],
+    "category": "graphics",
+    "maintainer": "MiniUnix Developers",
+    "homepage": "https://imagemagick.org"
+  }
+}
