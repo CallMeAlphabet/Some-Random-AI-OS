@@ -1,1 +1,1618 @@
-
+{
+  "categories": {
+    "file_system_basic": {
+      "name": "Basic File System Operations",
+      "commands": ["ls", "cd", "pwd", "mkdir", "rmdir", "touch", "rm", "cp", "mv", "ln"]
+    },
+    "file_viewing_editing": {
+      "name": "File Viewing and Editing",
+      "commands": ["cat", "head", "tail", "less", "nano", "vim", "echo"]
+    },
+    "file_search_manipulation": {
+      "name": "File Search and Manipulation",
+      "commands": ["find", "grep", "sed", "awk", "wc", "sort", "uniq", "diff"]
+    },
+    "file_permissions_ownership": {
+      "name": "File Permissions and Ownership",
+      "commands": ["chmod", "chown"]
+    },
+    "compression_archiving": {
+      "name": "Compression and Archiving",
+      "commands": ["tar", "gzip", "gunzip", "zip", "unzip"]
+    },
+    "system_information": {
+      "name": "System Information",
+      "commands": ["uname", "hostname", "whoami", "id", "uptime", "date", "cal", "df", "du", "free"]
+    },
+    "process_management": {
+      "name": "Process Management",
+      "commands": ["ps", "top", "htop", "kill", "killall", "jobs", "bg", "fg", "nohup"]
+    },
+    "networking": {
+      "name": "Networking",
+      "commands": ["ping", "curl", "wget", "netstat", "ifconfig", "ip", "ssh", "scp", "browser"]
+    },
+    "package_management": {
+      "name": "Package Management",
+      "commands": ["pkg"]
+    },
+    "development_tools": {
+      "name": "Development Tools",
+      "commands": ["git", "python3", "node", "gcc", "make"]
+    },
+    "applications": {
+      "name": "Applications",
+      "commands": ["calculator"]
+    },
+    "shell_features": {
+      "name": "Shell Features",
+      "commands": ["history", "alias", "unalias", "export", "env", "source", "clear", "exit", "help", "man"]
+    }
+  },
+  "commands": {
+    "ls": {
+      "description": "List directory contents",
+      "category": "file_system_basic",
+      "usage": "ls [OPTIONS] [FILE...]",
+      "options": {
+        "-l": "Use long listing format",
+        "-a": "Show hidden files (starting with .)",
+        "-h": "Human-readable sizes",
+        "-R": "Recursive listing",
+        "-t": "Sort by modification time",
+        "-r": "Reverse sort order",
+        "-S": "Sort by file size",
+        "-1": "One file per line"
+      },
+      "examples": [
+        "ls",
+        "ls -la",
+        "ls -lh /home/user",
+        "ls -lR",
+        "ls -lt"
+      ]
+    },
+    "cd": {
+      "description": "Change directory",
+      "category": "file_system_basic",
+      "usage": "cd [DIRECTORY]",
+      "special_paths": {
+        "~": "Home directory",
+        "-": "Previous directory",
+        "..": "Parent directory",
+        ".": "Current directory",
+        "/": "Root directory"
+      },
+      "examples": [
+        "cd /home/user/Documents",
+        "cd ~",
+        "cd ..",
+        "cd -",
+        "cd"
+      ]
+    },
+    "pwd": {
+      "description": "Print working directory",
+      "category": "file_system_basic",
+      "usage": "pwd [OPTIONS]",
+      "options": {
+        "-L": "Print logical path (with symlinks)",
+        "-P": "Print physical path (without symlinks)"
+      },
+      "examples": ["pwd"]
+    },
+    "mkdir": {
+      "description": "Create directory",
+      "category": "file_system_basic",
+      "usage": "mkdir [OPTIONS] DIRECTORY...",
+      "options": {
+        "-p": "Create parent directories as needed",
+        "-v": "Verbose output",
+        "-m MODE": "Set permissions"
+      },
+      "examples": [
+        "mkdir newfolder",
+        "mkdir -p path/to/deep/folder",
+        "mkdir dir1 dir2 dir3",
+        "mkdir -m 755 public_folder"
+      ]
+    },
+    "rmdir": {
+      "description": "Remove empty directory",
+      "category": "file_system_basic",
+      "usage": "rmdir [OPTIONS] DIRECTORY...",
+      "options": {
+        "-p": "Remove parent directories if empty",
+        "-v": "Verbose output"
+      },
+      "examples": [
+        "rmdir emptyfolder",
+        "rmdir -p path/to/empty"
+      ]
+    },
+    "touch": {
+      "description": "Create empty file or update timestamp",
+      "category": "file_system_basic",
+      "usage": "touch [OPTIONS] FILE...",
+      "options": {
+        "-a": "Change only access time",
+        "-m": "Change only modification time",
+        "-c": "Do not create file if it doesn't exist",
+        "-t STAMP": "Use specific timestamp"
+      },
+      "examples": [
+        "touch newfile.txt",
+        "touch file1.txt file2.txt",
+        "touch -t 202501011200 oldfile.txt"
+      ]
+    },
+    "rm": {
+      "description": "Remove files or directories",
+      "category": "file_system_basic",
+      "usage": "rm [OPTIONS] FILE...",
+      "options": {
+        "-r": "Remove directories recursively",
+        "-f": "Force removal without prompts",
+        "-i": "Prompt before removal",
+        "-v": "Verbose output",
+        "-d": "Remove empty directories"
+      },
+      "examples": [
+        "rm file.txt",
+        "rm -r folder/",
+        "rm -rf folder/",
+        "rm *.tmp",
+        "rm -i important.txt"
+      ]
+    },
+    "cp": {
+      "description": "Copy files or directories",
+      "category": "file_system_basic",
+      "usage": "cp [OPTIONS] SOURCE DEST",
+      "options": {
+        "-r": "Copy directories recursively",
+        "-i": "Prompt before overwrite",
+        "-v": "Verbose output",
+        "-p": "Preserve file attributes",
+        "-u": "Copy only when source is newer",
+        "-a": "Archive mode (preserve all)"
+      },
+      "examples": [
+        "cp file.txt backup.txt",
+        "cp -r folder/ backup/",
+        "cp *.txt Documents/",
+        "cp -a project/ project_backup/"
+      ]
+    },
+    "mv": {
+      "description": "Move or rename files",
+      "category": "file_system_basic",
+      "usage": "mv [OPTIONS] SOURCE DEST",
+      "options": {
+        "-i": "Prompt before overwrite",
+        "-v": "Verbose output",
+        "-f": "Force overwrite",
+        "-n": "Do not overwrite existing",
+        "-u": "Move only when source is newer"
+      },
+      "examples": [
+        "mv oldname.txt newname.txt",
+        "mv file.txt Documents/",
+        "mv *.log /var/log/",
+        "mv -i important.txt backup/"
+      ]
+    },
+    "ln": {
+      "description": "Create links between files",
+      "category": "file_system_basic",
+      "usage": "ln [OPTIONS] TARGET LINK_NAME",
+      "options": {
+        "-s": "Create symbolic (soft) link",
+        "-f": "Force creation",
+        "-v": "Verbose output",
+        "-n": "Treat destination as normal file if it's a symlink"
+      },
+      "examples": [
+        "ln -s /path/to/file link",
+        "ln file hardlink",
+        "ln -sf /usr/bin/python3 /usr/bin/python"
+      ]
+    },
+    "cat": {
+      "description": "Concatenate and display files",
+      "category": "file_viewing_editing",
+      "usage": "cat [OPTIONS] [FILE...]",
+      "options": {
+        "-n": "Number all output lines",
+        "-b": "Number non-blank lines",
+        "-s": "Squeeze multiple blank lines",
+        "-A": "Show all characters including non-printing",
+        "-E": "Display $ at end of each line",
+        "-T": "Display TAB characters as ^I"
+      },
+      "examples": [
+        "cat file.txt",
+        "cat file1.txt file2.txt",
+        "cat -n file.txt",
+        "cat file1.txt file2.txt > combined.txt"
+      ]
+    },
+    "head": {
+      "description": "Output first part of files",
+      "category": "file_viewing_editing",
+      "usage": "head [OPTIONS] [FILE...]",
+      "options": {
+        "-n NUM": "Print first NUM lines (default 10)",
+        "-c NUM": "Print first NUM bytes",
+        "-q": "Never print headers",
+        "-v": "Always print headers"
+      },
+      "examples": [
+        "head file.txt",
+        "head -n 20 file.txt",
+        "head -c 100 file.txt"
+      ]
+    },
+    "tail": {
+      "description": "Output last part of files",
+      "category": "file_viewing_editing",
+      "usage": "tail [OPTIONS] [FILE...]",
+      "options": {
+        "-n NUM": "Print last NUM lines (default 10)",
+        "-c NUM": "Print last NUM bytes",
+        "-f": "Follow file growth",
+        "-F": "Follow and retry if file is inaccessible",
+        "-q": "Never print headers",
+        "-v": "Always print headers"
+      },
+      "examples": [
+        "tail file.txt",
+        "tail -n 50 /var/log/syslog",
+        "tail -f /var/log/syslog",
+        "tail -F application.log"
+      ]
+    },
+    "less": {
+      "description": "View file contents with pagination",
+      "category": "file_viewing_editing",
+      "usage": "less [OPTIONS] [FILE]",
+      "options": {
+        "-N": "Show line numbers",
+        "-S": "Chop long lines",
+        "-i": "Ignore case in searches",
+        "-X": "No screen clearing on exit"
+      },
+      "controls": {
+        "Space": "Next page",
+        "b": "Previous page",
+        "q": "Quit",
+        "/pattern": "Search forward",
+        "?pattern": "Search backward",
+        "n": "Next search result",
+        "N": "Previous search result",
+        "g": "Go to beginning",
+        "G": "Go to end"
+      },
+      "examples": [
+        "less file.txt",
+        "less -N file.txt"
+      ]
+    },
+    "nano": {
+      "description": "Simple text editor",
+      "category": "file_viewing_editing",
+      "usage": "nano [OPTIONS] [FILE]",
+      "options": {
+        "-l": "Show line numbers",
+        "-m": "Enable mouse support",
+        "-i": "Auto-indent new lines",
+        "-w": "Disable line wrapping"
+      },
+      "controls": {
+        "^G": "Get Help",
+        "^O": "Save (WriteOut)",
+        "^X": "Exit",
+        "^K": "Cut line",
+        "^U": "Paste",
+        "^W": "Search",
+        "^\\": "Replace",
+        "^V": "Next page",
+        "^Y": "Previous page"
+      },
+      "examples": [
+        "nano file.txt",
+        "nano",
+        "nano -l script.sh"
+      ]
+    },
+    "vim": {
+      "description": "Vi IMproved text editor",
+      "category": "file_viewing_editing",
+      "usage": "vim [OPTIONS] [FILE]",
+      "options": {
+        "+NUM": "Start at line NUM",
+        "-R": "Read-only mode",
+        "-n": "No swap file"
+      },
+      "modes": {
+        "normal": "Press ESC - navigation and commands",
+        "insert": "Press i - text input",
+        "visual": "Press v - text selection",
+        "command": "Press : - execute commands"
+      },
+      "basic_commands": {
+        ":w": "Save",
+        ":q": "Quit",
+        ":wq": "Save and quit",
+        ":q!": "Quit without saving",
+        ":e FILE": "Edit file",
+        "i": "Enter insert mode",
+        "a": "Append after cursor",
+        "o": "Open new line below",
+        "ESC": "Return to normal mode",
+        "dd": "Delete line",
+        "yy": "Copy line",
+        "p": "Paste",
+        "u": "Undo",
+        "/pattern": "Search forward",
+        "n": "Next search result"
+      },
+      "examples": [
+        "vim file.txt",
+        "vim +10 file.txt",
+        "vim -R file.txt"
+      ]
+    },
+    "echo": {
+      "description": "Display text or write to files",
+      "category": "file_viewing_editing",
+      "usage": "echo [OPTIONS] [STRING...]",
+      "options": {
+        "-n": "Do not output trailing newline",
+        "-e": "Enable interpretation of backslash escapes",
+        "-E": "Disable backslash escapes (default)"
+      },
+      "redirection": {
+        ">": "Overwrite file",
+        ">>": "Append to file"
+      },
+      "examples": [
+        "echo Hello World",
+        "echo 'text' > file.txt",
+        "echo 'more text' >> file.txt",
+        "echo $HOME",
+        "echo -e 'Line1\\nLine2'"
+      ]
+    },
+    "find": {
+      "description": "Search for files in directory hierarchy",
+      "category": "file_search_manipulation",
+      "usage": "find [PATH] [OPTIONS]",
+      "options": {
+        "-name PATTERN": "Search by name (case-sensitive)",
+        "-iname PATTERN": "Search by name (case-insensitive)",
+        "-type [f|d|l]": "File type (f=file, d=directory, l=symlink)",
+        "-size [+|-]SIZE": "Search by size",
+        "-mtime DAYS": "Modified in last DAYS days",
+        "-user USER": "Files owned by USER",
+        "-perm MODE": "Files with permissions MODE",
+        "-exec CMD {} \\;": "Execute command on results",
+        "-delete": "Delete found files"
+      },
+      "examples": [
+        "find . -name '*.txt'",
+        "find /home -type f -name 'config*'",
+        "find . -size +1M",
+        "find . -mtime -7",
+        "find . -name '*.tmp' -delete",
+        "find . -type f -exec chmod 644 {} \\;"
+      ]
+    },
+    "grep": {
+      "description": "Search text patterns in files",
+      "category": "file_search_manipulation",
+      "usage": "grep [OPTIONS] PATTERN [FILE...]",
+      "options": {
+        "-i": "Ignore case",
+        "-r": "Recursive search",
+        "-n": "Show line numbers",
+        "-v": "Invert match",
+        "-l": "Show only filenames",
+        "-c": "Count matches",
+        "-w": "Match whole words",
+        "-A NUM": "Show NUM lines after match",
+        "-B NUM": "Show NUM lines before match",
+        "-C NUM": "Show NUM lines before and after",
+        "-E": "Extended regex",
+        "-F": "Fixed strings (no regex)"
+      },
+      "examples": [
+        "grep 'pattern' file.txt",
+        "grep -r 'TODO' .",
+        "grep -i 'error' /var/log/syslog",
+        "grep -n 'function' script.js",
+        "grep -C 3 'error' log.txt"
+      ]
+    },
+    "sed": {
+      "description": "Stream editor for text manipulation",
+      "category": "file_search_manipulation",
+      "usage": "sed [OPTIONS] 'SCRIPT' [FILE...]",
+      "options": {
+        "-i": "Edit files in-place",
+        "-e SCRIPT": "Add script",
+        "-n": "Suppress automatic printing"
+      },
+      "common_operations": {
+        "s/OLD/NEW/": "Substitute first occurrence",
+        "s/OLD/NEW/g": "Substitute all occurrences",
+        "s/OLD/NEW/i": "Case-insensitive substitution",
+        "d": "Delete line",
+        "p": "Print line",
+        "NUM,NUMd": "Delete lines NUM to NUM"
+      },
+      "examples": [
+        "sed 's/old/new/g' file.txt",
+        "sed '1,10d' file.txt",
+        "sed -i 's/foo/bar/g' file.txt",
+        "sed -n '10,20p' file.txt"
+      ]
+    },
+    "awk": {
+      "description": "Pattern scanning and text processing",
+      "category": "file_search_manipulation",
+      "usage": "awk [OPTIONS] 'PROGRAM' [FILE...]",
+      "options": {
+        "-F CHAR": "Set field separator",
+        "-v VAR=VALUE": "Set variable"
+      },
+      "built_in_variables": {
+        "$0": "Entire line",
+        "$1, $2, ...": "Field 1, 2, etc.",
+        "NF": "Number of fields",
+        "NR": "Line number",
+        "FS": "Field separator",
+        "OFS": "Output field separator"
+      },
+      "examples": [
+        "awk '{print $1}' file.txt",
+        "awk -F: '{print $1,$3}' /etc/passwd",
+        "awk '/pattern/ {print $0}' file.txt",
+        "awk 'NR==10' file.txt"
+      ]
+    },
+    "wc": {
+      "description": "Word, line, character, and byte count",
+      "category": "file_search_manipulation",
+      "usage": "wc [OPTIONS] [FILE...]",
+      "options": {
+        "-l": "Count lines",
+        "-w": "Count words",
+        "-c": "Count bytes",
+        "-m": "Count characters",
+        "-L": "Print length of longest line"
+      },
+      "examples": [
+        "wc file.txt",
+        "wc -l file.txt",
+        "ls | wc -l",
+        "wc -w document.txt"
+      ]
+    },
+    "sort": {
+      "description": "Sort lines of text",
+      "category": "file_search_manipulation",
+      "usage": "sort [OPTIONS] [FILE...]",
+      "options": {
+        "-r": "Reverse sort",
+        "-n": "Numeric sort",
+        "-k NUM": "Sort by column NUM",
+        "-u": "Remove duplicates",
+        "-t CHAR": "Use CHAR as field separator",
+        "-h": "Human-readable numbers",
+        "-f": "Ignore case"
+      },
+      "examples": [
+        "sort file.txt",
+        "sort -r file.txt",
+        "sort -n numbers.txt",
+        "sort -k2 data.txt",
+        "sort -u file.txt"
+      ]
+    },
+    "uniq": {
+      "description": "Report or omit repeated lines",
+      "category": "file_search_manipulation",
+      "usage": "uniq [OPTIONS] [FILE]",
+      "options": {
+        "-c": "Prefix lines with count",
+        "-d": "Only print duplicates",
+        "-u": "Only print unique lines",
+        "-i": "Ignore case",
+        "-f NUM": "Skip NUM fields"
+      },
+      "examples": [
+        "sort file.txt | uniq",
+        "sort file.txt | uniq -c",
+        "sort file.txt | uniq -d"
+      ]
+    },
+    "diff": {
+      "description": "Compare files line by line",
+      "category": "file_search_manipulation",
+      "usage": "diff [OPTIONS] FILE1 FILE2",
+      "options": {
+        "-u": "Unified format",
+        "-c": "Context format",
+        "-y": "Side-by-side comparison",
+        "-i": "Ignore case",
+        "-w": "Ignore whitespace",
+        "-b": "Ignore space changes",
+        "-r": "Recursively compare directories",
+        "-q": "Report only when files differ"
+      },
+      "examples": [
+        "diff file1.txt file2.txt",
+        "diff -u old.txt new.txt",
+        "diff -y file1.txt file2.txt",
+        "diff -r dir1/ dir2/"
+      ]
+    },
+    "chmod": {
+      "description": "Change file permissions",
+      "category": "file_permissions_ownership",
+      "usage": "chmod [OPTIONS] MODE FILE...",
+      "options": {
+        "-R": "Recursive",
+        "-v": "Verbose output",
+        "-c": "Report only when change is made"
+      },
+      "numeric_modes": {
+        "0": "---",
+        "1": "--x",
+        "2": "-w-",
+        "3": "-wx",
+        "4": "r--",
+        "5": "r-x",
+        "6": "rw-",
+        "7": "rwx"
+      },
+      "symbolic_modes": {
+        "u": "User/owner",
+        "g": "Group",
+        "o": "Others",
+        "a": "All",
+        "+": "Add permission",
+        "-": "Remove permission",
+        "=": "Set exact permission"
+      },
+      "examples": [
+        "chmod 755 script.sh",
+        "chmod u+x script.sh",
+        "chmod -R 644 *.txt",
+        "chmod go-w file.txt",
+        "chmod a+r file.txt"
+      ]
+    },
+    "chown": {
+      "description": "Change file owner and group",
+      "category": "file_permissions_ownership",
+      "usage": "chown [OPTIONS] [OWNER][:GROUP] FILE...",
+      "options": {
+        "-R": "Recursive",
+        "-v": "Verbose output",
+        "-c": "Report only when change is made",
+        "--reference=FILE": "Use FILE's owner/group"
+      },
+      "examples": [
+        "chown user file.txt",
+        "chown user:user file.txt",
+        "chown -R user:user folder/",
+        "chown :group file.txt"
+      ]
+    },
+    "tar": {
+      "description": "Archive files",
+      "category": "compression_archiving",
+      "usage": "tar [OPTIONS] [ARCHIVE] [FILE...]",
+      "options": {
+        "-c": "Create archive",
+        "-x": "Extract archive",
+        "-t": "List contents",
+        "-f": "Specify filename",
+        "-v": "Verbose",
+        "-z": "Gzip compression (.tar.gz)",
+        "-j": "Bzip2 compression (.tar.bz2)",
+        "-J": "Xz compression (.tar.xz)",
+        "-C DIR": "Change to directory"
+      },
+      "examples": [
+        "tar -czf archive.tar.gz folder/",
+        "tar -xzf archive.tar.gz",
+        "tar -tzf archive.tar.gz",
+        "tar -xzf archive.tar.gz -C /tmp/",
+        "tar -cjf archive.tar.bz2 folder/"
+      ]
+    },
+    "gzip": {
+      "description": "Compress files",
+      "category": "compression_archiving",
+      "usage": "gzip [OPTIONS] [FILE...]",
+      "options": {
+        "-d": "Decompress",
+        "-k": "Keep original file",
+        "-r": "Recursive",
+        "-v": "Verbose",
+        "-NUM": "Compression level (1-9)",
+        "-t": "Test compressed file"
+      },
+      "examples": [
+        "gzip file.txt",
+        "gzip -d file.txt.gz",
+        "gzip -k file.txt",
+        "gzip -9 file.txt"
+      ]
+    },
+    "gunzip": {
+      "description": "Decompress gzip files",
+      "category": "compression_archiving",
+      "usage": "gunzip [OPTIONS] [FILE...]",
+      "options": {
+        "-k": "Keep original file",
+        "-v": "Verbose",
+        "-t": "Test compressed file"
+      },
+      "examples": [
+        "gunzip file.txt.gz",
+        "gunzip -k file.txt.gz"
+      ]
+    },
+    "zip": {
+      "description": "Package and compress files",
+      "category": "compression_archiving",
+      "usage": "zip [OPTIONS] ARCHIVE FILE...",
+      "options": {
+        "-r": "Recursive",
+        "-q": "Quiet mode",
+        "-v": "Verbose",
+        "-NUM": "Compression level (0-9)",
+        "-e": "Encrypt",
+        "-u": "Update existing archive"
+      },
+      "examples": [
+        "zip archive.zip file.txt",
+        "zip -r archive.zip folder/",
+        "zip -9 archive.zip file.txt"
+      ]
+    },
+    "unzip": {
+      "description": "Extract zip archives",
+      "category": "compression_archiving",
+      "usage": "unzip [OPTIONS] ARCHIVE",
+      "options": {
+        "-l": "List contents",
+        "-d DIR": "Extract to directory",
+        "-q": "Quiet mode",
+        "-o": "Overwrite without prompting",
+        "-n": "Never overwrite",
+        "-v": "Verbose"
+      },
+      "examples": [
+        "unzip archive.zip",
+        "unzip archive.zip -d folder/",
+        "unzip -l archive.zip"
+      ]
+    },
+    "uname": {
+      "description": "Print system information",
+      "category": "system_information",
+      "usage": "uname [OPTIONS]",
+      "options": {
+        "-a": "All information",
+        "-s": "Kernel name",
+        "-n": "Hostname",
+        "-r": "Kernel release",
+        "-v": "Kernel version",
+        "-m": "Machine hardware",
+        "-p": "Processor type",
+        "-i": "Hardware platform",
+        "-o": "Operating system"
+      },
+      "examples": [
+        "uname",
+        "uname -a",
+        "uname -r"
+      ]
+    },
+    "hostname": {
+      "description": "Show or set system hostname",
+      "category": "system_information",
+      "usage": "hostname [OPTIONS] [NAME]",
+      "options": {
+        "-f": "Fully qualified domain name",
+        "-i": "IP address",
+        "-I": "All IP addresses",
+        "-s": "Short hostname"
+      },
+      "examples": [
+        "hostname",
+        "hostname -f",
+        "hostname -I"
+      ]
+    },
+    "whoami": {
+      "description": "Print current username",
+      "category": "system_information",
+      "usage": "whoami",
+      "examples": ["whoami"]
+    },
+    "id": {
+      "description": "Print user identity",
+      "category": "system_information",
+      "usage": "id [OPTIONS] [USER]",
+      "options": {
+        "-u": "User ID only",
+        "-g": "Group ID only",
+        "-G": "All group IDs",
+        "-n": "Name instead of number",
+        "-r": "Real ID instead of effective"
+      },
+      "examples": [
+        "id",
+        "id user",
+        "id -u",
+        "id -gn"
+      ]
+    },
+    "uptime": {
+      "description": "Show system uptime and load",
+      "category": "system_information",
+      "usage": "uptime [OPTIONS]",
+      "options": {
+        "-p": "Pretty format",
+        "-s": "System up since"
+      },
+      "examples": [
+        "uptime",
+        "uptime -p"
+      ]
+    },
+    "date": {
+      "description": "Display or set system date and time",
+      "category": "system_information",
+      "usage": "date [OPTIONS] [+FORMAT]",
+      "options": {
+        "-d STRING": "Display time described by STRING",
+        "-s STRING": "Set time described by STRING",
+        "-u": "UTC time",
+        "-R": "RFC 2822 format",
+        "-I": "ISO 8601 format"
+      },
+      "format_codes": {
+        "%Y": "Year (4 digits)",
+        "%y": "Year (2 digits)",
+        "%m": "Month (01-12)",
+        "%d": "Day (01-31)",
+        "%H": "Hour (00-23)",
+        "%M": "Minute (00-59)",
+        "%S": "Second (00-59)",
+        "%A": "Weekday name",
+        "%B": "Month name",
+        "%p": "AM/PM",
+        "%s": "Unix timestamp"
+      },
+      "examples": [
+        "date",
+        "date '+%Y-%m-%d %H:%M:%S'",
+        "date '+%A, %B %d, %Y'",
+        "date -u"
+      ]
+    },
+    "cal": {
+      "description": "Display calendar",
+      "category": "system_information",
+      "usage": "cal [OPTIONS] [[MONTH] YEAR]",
+      "options": {
+        "-3": "Show three months",
+        "-y": "Show entire year",
+        "-m MONTH": "Specify month"
+      },
+      "examples": [
+        "cal",
+        "cal 12 2024",
+        "cal -y",
+        "cal -3"
+      ]
+    },
+    "df": {
+      "description": "Report file system disk space usage",
+      "category": "system_information",
+      "usage": "df [OPTIONS] [FILE...]",
+      "options": {
+        "-h": "Human-readable sizes",
+        "-H": "Human-readable sizes (powers of 1000)",
+        "-T": "Show file system type",
+        "-i": "Show inode information",
+        "-a": "Include dummy file systems",
+        "-t TYPE": "Limit to TYPE file systems",
+        "-x TYPE": "Exclude TYPE file systems"
+      },
+      "examples": [
+        "df",
+        "df -h",
+        "df -h /",
+        "df -T",
+        "df -i"
+      ]
+    },
+    "du": {
+      "description": "Estimate file space usage",
+      "category": "system_information",
+      "usage": "du [OPTIONS] [FILE...]",
+      "options": {
+        "-h": "Human-readable sizes",
+        "-s": "Summary only",
+        "-a": "All files",
+        "-c": "Grand total",
+        "-d NUM": "Max depth NUM",
+        "--max-depth=NUM": "Max depth NUM",
+        "-x": "Skip different file systems",
+        "--exclude=PATTERN": "Exclude files matching PATTERN"
+      },
+      "examples": [
+        "du -h",
+        "du -sh *",
+        "du -h --max-depth=1",
+        "du -sh folder/",
+        "du -ah ."
+      ]
+    },
+    "free": {
+      "description": "Display memory usage",
+      "category": "system_information",
+      "usage": "free [OPTIONS]",
+      "options": {
+        "-h": "Human-readable",
+        "-m": "Show in megabytes",
+        "-g": "Show in gigabytes",
+        "-k": "Show in kilobytes",
+        "-b": "Show in bytes",
+        "-t": "Show total line",
+        "-s NUM": "Update every NUM seconds",
+        "-c NUM": "Update NUM times"
+      },
+      "examples": [
+        "free",
+        "free -h",
+        "free -m",
+        "free -h -s 2"
+      ]
+    },
+    "ps": {
+      "description": "Report process status",
+      "category": "process_management",
+      "usage": "ps [OPTIONS]",
+      "options": {
+        "aux": "All processes, user-oriented",
+        "-ef": "Full format listing",
+        "-u USER": "Processes for user",
+        "-p PID": "Select by PID",
+        "--sort=KEY": "Sort by KEY",
+        "-o FORMAT": "User-defined format"
+      },
+      "examples": [
+        "ps",
+        "ps aux",
+        "ps -ef",
+        "ps aux --sort=-%cpu",
+        "ps aux --sort=-%mem",
+        "ps -u user"
+      ]
+    },
+    "top": {
+      "description": "Display and update sorted process information",
+      "category": "process_management",
+      "usage": "top [OPTIONS]",
+      "options": {
+        "-d NUM": "Update delay NUM seconds",
+        "-n NUM": "Number of iterations",
+        "-u USER": "Monitor user USER",
+        "-p PID": "Monitor PID"
+      },
+      "interactive_commands": {
+        "q": "Quit",
+        "k": "Kill process",
+        "r": "Renice process",
+        "M": "Sort by memory",
+        "P": "Sort by CPU",
+        "T": "Sort by time",
+        "u": "Filter by user",
+        "h": "Help",
+        "1": "Toggle CPU display"
+      },
+      "examples": [
+        "top",
+        "top -u user",
+        "top -d 5"
+      ]
+    },
+    "htop": {
+      "description": "Interactive process viewer (enhanced top)",
+      "category": "process_management",
+      "usage": "htop [OPTIONS]",
+      "options": {
+        "-d NUM": "Update delay",
+        "-u USER": "Show only user USER",
+        "-p PID": "Show only PID",
+        "-s COLUMN": "Sort by COLUMN",
+        "-t": "Tree view"
+      },
+      "note": "Install with: pkg install htop",
+      "examples": [
+        "htop",
+        "htop -u user",
+        "htop -t"
+      ]
+    },
+    "kill": {
+      "description": "Send signal to process",
+      "category": "process_management",
+      "usage": "kill [OPTIONS] PID...",
+      "options": {
+        "-l": "List signal names",
+        "-s SIGNAL": "Send SIGNAL",
+        "-SIGNAL": "Send SIGNAL"
+      },
+      "signals": {
+        "1 (HUP)": "Hang up",
+        "2 (INT)": "Interrupt",
+        "9 (KILL)": "Force kill",
+        "15 (TERM)": "Graceful termination (default)",
+        "18 (CONT)": "Continue if stopped",
+        "19 (STOP)": "Stop process"
+      },
+      "examples": [
+        "kill 1234",
+        "kill -9 1234",
+        "kill -15 1234",
+        "kill -HUP 1234"
+      ]
+    },
+    "killall": {
+      "description": "Kill processes by name",
+      "category": "process_management",
+      "usage": "killall [OPTIONS] NAME...",
+      "options": {
+        "-i": "Interactive mode",
+        "-v": "Verbose",
+        "-w": "Wait for processes to die",
+        "-s SIGNAL": "Send SIGNAL",
+        "-u USER": "Kill only USER's processes"
+      },
+      "examples": [
+        "killall firefox",
+        "killall -9 chrome",
+        "killall -u user python3"
+      ]
+    },
+    "jobs": {
+      "description": "List active jobs",
+      "category": "process_management",
+      "usage": "jobs [OPTIONS]",
+      "options": {
+        "-l": "Show PID",
+        "-p": "Show PID only",
+        "-r": "Show running jobs only",
+        "-s": "Show stopped jobs only"
+      },
+      "examples": [
+        "jobs",
+        "jobs -l"
+      ]
+    },
+    "bg": {
+      "description": "Resume job in background",
+      "category": "process_management",
+      "usage": "bg [JOB_ID]",
+      "examples": [
+        "bg",
+        "bg %1",
+        "bg %2"
+      ]
+    },
+    "fg": {
+      "description": "Resume job in foreground",
+      "category": "process_management",
+      "usage": "fg [JOB_ID]",
+      "examples": [
+        "fg",
+        "fg %1",
+        "fg %2"
+      ]
+    },
+    "nohup": {
+      "description": "Run command immune to hangups",
+      "category": "process_management",
+      "usage": "nohup COMMAND [ARGS...]",
+      "examples": [
+        "nohup long_running_script.sh &",
+        "nohup python3 server.py &",
+        "nohup make all > build.log 2>&1 &"
+      ]
+    },
+    "ping": {
+      "description": "Send ICMP echo requests",
+      "category": "networking",
+      "usage": "ping [OPTIONS] HOST",
+      "options": {
+        "-c COUNT": "Number of packets",
+        "-i INTERVAL": "Wait INTERVAL seconds between packets",
+        "-w DEADLINE": "Timeout in seconds",
+        "-s SIZE": "Packet size",
+        "-q": "Quiet output",
+        "-v": "Verbose output"
+      },
+      "examples": [
+        "ping google.com",
+        "ping -c 4 8.8.8.8",
+        "ping -c 10 -i 2 example.com"
+      ]
+    },
+    "curl": {
+      "description": "Transfer data from or to a server",
+      "category": "networking",
+      "usage": "curl [OPTIONS] URL",
+      "options": {
+        "-O": "Save with remote filename",
+        "-o FILE": "Save to file",
+        "-L": "Follow redirects",
+        "-I": "Fetch headers only",
+        "-X METHOD": "Specify request method",
+        "-d DATA": "POST data",
+        "-H HEADER": "Add header",
+        "-u USER:PASS": "Authentication",
+        "-v": "Verbose",
+        "-s": "Silent mode",
+        "-k": "Insecure (skip SSL verification)"
+      },
+      "examples": [
+        "curl https://example.com",
+        "curl -O https://example.com/file.txt",
+        "curl -I https://example.com",
+        "curl -X POST -d 'data=value' https://api.example.com",
+        "curl -H 'Content-Type: application/json' https://api.example.com"
+      ]
+    },
+    "wget": {
+      "description": "Network downloader",
+      "category": "networking",
+      "usage": "wget [OPTIONS] URL",
+      "options": {
+        "-O FILE": "Save to file",
+        "-c": "Continue partial download",
+        "-r": "Recursive download",
+        "-np": "No parent directories",
+        "-q": "Quiet mode",
+        "-b": "Background download",
+        "-t NUM": "Number of retries",
+        "--limit-rate=RATE": "Limit download rate"
+      },
+      "examples": [
+        "wget https://example.com/file.txt",
+        "wget -c https://example.com/large.iso",
+        "wget -O custom_name.txt https://example.com/file.txt",
+        "wget -r -np https://example.com/docs/"
+      ]
+    },
+    "netstat": {
+      "description": "Network statistics",
+      "category": "networking",
+      "usage": "netstat [OPTIONS]",
+      "options": {
+        "-a": "All sockets",
+        "-t": "TCP connections",
+        "-u": "UDP connections",
+        "-n": "Numeric addresses",
+        "-l": "Listening sockets",
+        "-p": "Show programs",
+        "-r": "Routing table",
+        "-i": "Interface statistics",
+        "-s": "Statistics summary"
+      },
+      "examples": [
+        "netstat -tuln",
+        "netstat -an",
+        "netstat -r",
+        "netstat -i"
+      ]
+    },
+    "ifconfig": {
+      "description": "Configure network interfaces",
+      "category": "networking",
+      "usage": "ifconfig [INTERFACE] [OPTIONS]",
+      "options": {
+        "up": "Activate interface",
+        "down": "Deactivate interface",
+        "netmask MASK": "Set netmask",
+        "broadcast ADDR": "Set broadcast address"
+      },
+      "examples": [
+        "ifconfig",
+        "ifconfig eth0",
+        "ifconfig eth0 up",
+        "ifconfig eth0 down"
+      ]
+    },
+    "ip": {
+      "description": "Show/manipulate routing, devices, policy routing",
+      "category": "networking",
+      "usage": "ip [OPTIONS] OBJECT COMMAND",
+      "objects": {
+        "addr": "Protocol address",
+        "link": "Network device",
+        "route": "Routing table entry",
+        "neigh": "ARP/NDISC cache entry"
+      },
+      "examples": [
+        "ip addr show",
+        "ip link show",
+        "ip route show",
+        "ip addr add 192.168.1.100/24 dev eth0",
+        "ip link set eth0 up"
+      ]
+    },
+    "ssh": {
+      "description": "OpenSSH client (remote login)",
+      "category": "networking",
+      "usage": "ssh [OPTIONS] [USER@]HOST [COMMAND]",
+      "options": {
+        "-p PORT": "Port number",
+        "-i FILE": "Identity file (key)",
+        "-v": "Verbose mode",
+        "-l USER": "Login as USER",
+        "-X": "Enable X11 forwarding",
+        "-L PORT:HOST:HOSTPORT": "Local port forwarding",
+        "-R PORT:HOST:HOSTPORT": "Remote port forwarding"
+      },
+      "examples": [
+        "ssh user@example.com",
+        "ssh -p 2222 user@example.com",
+        "ssh -i ~/.ssh/id_rsa user@example.com",
+        "ssh user@example.com 'ls -la'"
+      ]
+    },
+    "scp": {
+      "description": "Secure copy (remote file copy)",
+      "category": "networking",
+      "usage": "scp [OPTIONS] SOURCE DEST",
+      "options": {
+        "-r": "Recursive",
+        "-P PORT": "Port number",
+        "-i FILE": "Identity file",
+        "-v": "Verbose",
+        "-C": "Enable compression",
+        "-p": "Preserve times and modes"
+      },
+      "examples": [
+        "scp file.txt user@host:/path/",
+        "scp -r folder/ user@host:/path/",
+        "scp user@host:/path/file.txt .",
+        "scp -P 2222 file.txt user@host:/path/"
+      ]
+    },
+    "browser": {
+      "description": "Text-based web browser with real search",
+      "category": "networking",
+      "usage": "browser [QUERY|URL]",
+      "behavior": "Uses actual web search to find real information. Displays results in simplified text format.",
+      "commands": {
+        "back": "Return to previous page or exit",
+        "exit": "Exit browser",
+        "quit": "Exit browser",
+        "search [query]": "New search",
+        "open [url]": "Fetch specific URL",
+        "history": "Show browsing history",
+        "bookmark": "Bookmark current page"
+      },
+      "examples": [
+        "browser python tutorial",
+        "browser https://example.com",
+        "browser latest tech news",
+        "browser"
+      ]
+    },
+    "pkg": {
+      "description": "MiniUnix package manager",
+      "category": "package_management",
+      "usage": "pkg COMMAND [OPTIONS] [PACKAGE...]",
+      "commands": {
+        "update": "Update package lists",
+        "upgrade": "Upgrade all packages",
+        "install PACKAGE": "Install package",
+        "remove PACKAGE": "Remove package",
+        "search PATTERN": "Search for packages",
+        "list": "List installed packages",
+        "info PACKAGE": "Show package information",
+        "clean": "Clean package cache",
+        "autoremove": "Remove unnecessary packages"
+      },
+      "examples": [
+        "pkg update",
+        "pkg install nodejs",
+        "pkg remove nodejs",
+        "pkg search python",
+        "pkg list",
+        "pkg info git",
+        "pkg upgrade",
+        "pkg clean"
+      ]
+    },
+    "git": {
+      "description": "Distributed version control system",
+      "category": "development_tools",
+      "usage": "git COMMAND [OPTIONS]",
+      "common_commands": {
+        "init": "Initialize repository",
+        "clone URL": "Clone repository",
+        "add FILE": "Stage changes",
+        "commit -m MSG": "Commit changes",
+        "push": "Push to remote",
+        "pull": "Pull from remote",
+        "status": "Show status",
+        "log": "Show commit history",
+        "branch": "List/create branches",
+        "checkout BRANCH": "Switch branches",
+        "merge BRANCH": "Merge branches",
+        "diff": "Show changes",
+        "remote": "Manage remotes",
+        "fetch": "Fetch from remote",
+        "reset": "Reset changes",
+        "stash": "Stash changes"
+      },
+      "examples": [
+        "git init",
+        "git clone https://github.com/user/repo.git",
+        "git add .",
+        "git commit -m 'Initial commit'",
+        "git status",
+        "git log",
+        "git branch feature",
+        "git checkout feature",
+        "git push origin main"
+      ]
+    },
+    "python3": {
+      "description": "Python interpreter",
+      "category": "development_tools",
+      "usage": "python3 [OPTIONS] [SCRIPT] [ARGS...]",
+      "options": {
+        "-c CMD": "Execute command",
+        "-m MODULE": "Run module",
+        "-i": "Interactive mode after script",
+        "-u": "Unbuffered output",
+        "-v": "Verbose",
+        "--version": "Show version"
+      },
+      "examples": [
+        "python3 script.py",
+        "python3 -c 'print(\"Hello\")'",
+        "python3 -m http.server 8000",
+        "python3 -m pip install package",
+        "python3 -i script.py"
+      ]
+    },
+    "node": {
+      "description": "Node.js JavaScript runtime",
+      "category": "development_tools",
+      "usage": "node [OPTIONS] [SCRIPT] [ARGS...]",
+      "options": {
+        "-e CODE": "Evaluate code",
+        "-p CODE": "Evaluate and print",
+        "-v": "Show version",
+        "--version": "Show version"
+      },
+      "note": "Install with: pkg install nodejs",
+      "examples": [
+        "node script.js",
+        "node -e 'console.log(\"Hello\")'",
+        "node -p '2 + 2'"
+      ]
+    },
+    "gcc": {
+      "description": "GNU C/C++ compiler",
+      "category": "development_tools",
+      "usage": "gcc [OPTIONS] FILE...",
+      "options": {
+        "-o FILE": "Output filename",
+        "-c": "Compile only",
+        "-g": "Include debug info",
+        "-O0": "No optimization",
+        "-O1": "Optimize",
+        "-O2": "Optimize more",
+        "-O3": "Optimize most",
+        "-Wall": "All warnings",
+        "-Werror": "Treat warnings as errors",
+        "-I DIR": "Include directory",
+        "-L DIR": "Library directory",
+        "-l LIB": "Link library"
+      },
+      "note": "Install with: pkg install gcc",
+      "examples": [
+        "gcc program.c -o program",
+        "gcc -Wall -O2 program.c -o program",
+        "gcc -c file.c",
+        "gcc file.o -o program"
+      ]
+    },
+    "make": {
+      "description": "Build automation tool",
+      "category": "development_tools",
+      "usage": "make [OPTIONS] [TARGET]",
+      "options": {
+        "-f FILE": "Use FILE as makefile",
+        "-j NUM": "Parallel jobs",
+        "-n": "Dry run",
+        "-B": "Unconditionally make all targets",
+        "-C DIR": "Change to DIR"
+      },
+      "note": "Install with: pkg install make",
+      "examples": [
+        "make",
+        "make install",
+        "make clean",
+        "make -j4",
+        "make -C project/"
+      ]
+    },
+    "calculator": {
+      "description": "Interactive calculator",
+      "category": "applications",
+      "usage": "calculator",
+      "operations": {
+        "basic": "+ - * / % ()",
+        "power": "pow(base, exp) or **",
+        "roots": "sqrt(x), cbrt(x)",
+        "trigonometry": "sin(x), cos(x), tan(x), asin(x), acos(x), atan(x)",
+        "logarithms": "log(x), log10(x), ln(x)",
+        "rounding": "floor(x), ceil(x), round(x)",
+        "constants": "pi, e",
+        "absolute": "abs(x)"
+      },
+      "commands": {
+        "exit": "Exit calculator",
+        "quit": "Exit calculator",
+        "q": "Exit calculator",
+        "help": "Show help",
+        "clear": "Clear screen"
+      },
+      "examples": [
+        "calculator",
+        "calc> 5 + 3 * 2",
+        "calc> sqrt(16)",
+        "calc> sin(pi / 2)",
+        "calc> pow(2, 8)",
+        "calc> exit"
+      ]
+    },
+    "history": {
+      "description": "Command history",
+      "category": "shell_features",
+      "usage": "history [N]",
+      "options": {
+        "-c": "Clear history",
+        "-d NUM": "Delete entry NUM",
+        "-w": "Write history to file"
+      },
+      "examples": [
+        "history",
+        "history 20",
+        "history -c"
+      ]
+    },
+    "alias": {
+      "description": "Create command alias",
+      "category": "shell_features",
+      "usage": "alias [NAME[='COMMAND']]",
+      "examples": [
+        "alias",
+        "alias ll='ls -la'",
+        "alias gs='git status'",
+        "alias update='pkg update && pkg upgrade'"
+      ]
+    },
+    "unalias": {
+      "description": "Remove alias",
+      "category": "shell_features",
+      "usage": "unalias NAME",
+      "options": {
+        "-a": "Remove all aliases"
+      },
+      "examples": [
+        "unalias ll",
+        "unalias -a"
+      ]
+    },
+    "export": {
+      "description": "Set environment variable",
+      "category": "shell_features",
+      "usage": "export [NAME[=VALUE]]",
+      "examples": [
+        "export",
+        "export PATH=$PATH:/new/path",
+        "export EDITOR=vim",
+        "export JAVA_HOME=/usr/lib/jvm/java-11"
+      ]
+    },
+    "env": {
+      "description": "Display environment variables",
+      "category": "shell_features",
+      "usage": "env [OPTIONS] [NAME=VALUE] [COMMAND]",
+      "options": {
+        "-i": "Start with empty environment",
+        "-u NAME": "Remove variable NAME"
+      },
+      "examples": [
+        "env",
+        "env | grep PATH",
+        "env LANG=C command"
+      ]
+    },
+    "source": {
+      "description": "Execute commands from file",
+      "category": "shell_features",
+      "usage": "source FILE",
+      "aliases": ["."],
+      "examples": [
+        "source ~/.bashrc",
+        ". ~/.profile",
+        "source script.sh"
+      ]
+    },
+    "clear": {
+      "description": "Clear terminal screen",
+      "category": "shell_features",
+      "usage": "clear",
+      "examples": ["clear"]
+    },
+    "exit": {
+      "description": "Exit the shell",
+      "category": "shell_features",
+      "usage": "exit [N]",
+      "examples": [
+        "exit",
+        "exit 0",
+        "exit 1"
+      ]
+    },
+    "help": {
+      "description": "Show help information",
+      "category": "shell_features",
+      "usage": "help [COMMAND]",
+      "examples": [
+        "help",
+        "help ls",
+        "help cd"
+      ]
+    },
+    "man": {
+      "description": "Display manual pages",
+      "category": "shell_features",
+      "usage": "man [SECTION] COMMAND",
+      "sections": {
+        "1": "User commands",
+        "2": "System calls",
+        "3": "Library functions",
+        "4": "Special files",
+        "5": "File formats",
+        "6": "Games",
+        "7": "Miscellaneous",
+        "8": "System administration"
+      },
+      "navigation": {
+        "Space": "Next page",
+        "b": "Previous page",
+        "q": "Quit",
+        "/pattern": "Search forward",
+        "?pattern": "Search backward",
+        "n": "Next search result",
+        "N": "Previous search result",
+        "g": "Go to beginning",
+        "G": "Go to end"
+      },
+      "examples": [
+        "man ls",
+        "man bash",
+        "man 5 passwd",
+        "man -k search"
+      ]
+    }
+  },
+  "shell_operators": {
+    "pipe": {
+      "symbol": "|",
+      "description": "Send output of one command to another",
+      "examples": [
+        "ls | grep txt",
+        "ps aux | grep python",
+        "cat file.txt | wc -l",
+        "history | tail -20"
+      ]
+    },
+    "redirect_output": {
+      "symbol": ">",
+      "description": "Redirect output to file (overwrite)",
+      "examples": [
+        "echo 'text' > file.txt",
+        "ls > files.txt",
+        "date > timestamp.txt"
+      ]
+    },
+    "append_output": {
+      "symbol": ">>",
+      "description": "Redirect output to file (append)",
+      "examples": [
+        "echo 'more text' >> file.txt",
+        "date >> log.txt",
+        "ls >> files.txt"
+      ]
+    },
+    "redirect_input": {
+      "symbol": "<",
+      "description": "Redirect input from file",
+      "examples": [
+        "wc -l < file.txt",
+        "sort < unsorted.txt > sorted.txt",
+        "cat < input.txt"
+      ]
+    },
+    "redirect_stderr": {
+      "symbol": "2>",
+      "description": "Redirect error output",
+      "examples": [
+        "command 2> errors.log",
+        "make 2> build_errors.txt"
+      ]
+    },
+    "redirect_both": {
+      "symbol": "&>",
+      "description": "Redirect both stdout and stderr",
+      "examples": [
+        "command &> all_output.log",
+        "script.sh &> output.txt"
+      ]
+    },
+    "command_chaining": {
+      "symbols": {
+        ";": "Run commands sequentially",
+        "&&": "Run next if previous succeeds",
+        "||": "Run next if previous fails"
+      },
+      "examples": [
+        "cd /tmp ; ls",
+        "mkdir test && cd test",
+        "command || echo 'failed'",
+        "make && make install"
+      ]
+    },
+    "background": {
+      "symbol": "&",
+      "description": "Run command in background",
+      "examples": [
+        "long_process &",
+        "sleep 100 &",
+        "python3 server.py &"
+      ]
+    },
+    "command_substitution": {
+      "symbols": {
+        "$(...)": "Modern command substitution",
+        "`...`": "Legacy command substitution"
+      },
+      "examples": [
+        "echo Today is $(date)",
+        "mkdir backup_$(date +%Y%m%d)",
+        "echo Files: $(ls | wc -l)"
+      ]
+    }
+  }
+}
