@@ -1,0 +1,118 @@
+{
+  "coreutils": {
+    "version": "9.1-1",
+    "description": "Core Unix utilities",
+    "size": "14.2 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": [],
+    "files": [
+      "/bin/ls",
+      "/bin/cat",
+      "/bin/cp",
+      "/bin/mv",
+      "/bin/rm",
+      "/bin/mkdir",
+      "/bin/rmdir",
+      "/bin/touch",
+      "/usr/bin/wc",
+      "/usr/bin/sort",
+      "/usr/bin/uniq"
+    ]
+  },
+  "bash": {
+    "version": "5.2.15-1",
+    "description": "GNU Bourne Again Shell",
+    "size": "7.8 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": ["readline"],
+    "files": [
+      "/bin/bash",
+      "/bin/sh",
+      "/usr/share/man/man1/bash.1",
+      "/etc/bash.bashrc"
+    ]
+  },
+  "nano": {
+    "version": "7.2-1",
+    "description": "Simple text editor",
+    "size": "2.4 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": ["ncurses"],
+    "files": [
+      "/bin/nano",
+      "/usr/share/man/man1/nano.1",
+      "/etc/nanorc"
+    ]
+  },
+  "vim": {
+    "version": "9.0.1000-1",
+    "description": "Vi IMproved text editor",
+    "size": "35.6 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": ["ncurses", "acl"],
+    "files": [
+      "/bin/vim",
+      "/usr/bin/vim",
+      "/usr/share/vim",
+      "/usr/share/man/man1/vim.1"
+    ]
+  },
+  "python3": {
+    "version": "3.11.2-1",
+    "description": "Python programming language",
+    "size": "52.3 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": ["libssl", "libffi", "zlib"],
+    "files": [
+      "/usr/bin/python3",
+      "/usr/bin/python3.11",
+      "/usr/lib/python3.11",
+      "/usr/share/man/man1/python3.1"
+    ]
+  },
+  "git": {
+    "version": "2.39.2-1",
+    "description": "Distributed version control system",
+    "size": "28.9 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": ["curl", "openssl", "zlib"],
+    "files": [
+      "/usr/bin/git",
+      "/usr/lib/git-core",
+      "/usr/share/git-core",
+      "/usr/share/man/man1/git.1"
+    ]
+  },
+  "curl": {
+    "version": "7.88.1-1",
+    "description": "Command line tool for transferring data",
+    "size": "1.8 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": ["openssl", "zlib"],
+    "files": [
+      "/usr/bin/curl",
+      "/usr/lib/libcurl.so",
+      "/usr/share/man/man1/curl.1"
+    ]
+  },
+  "wget": {
+    "version": "1.21.3-1",
+    "description": "Network downloader",
+    "size": "3.2 MB",
+    "status": "installed",
+    "install_date": "[installation_date]",
+    "dependencies": ["openssl", "zlib"],
+    "files": [
+      "/usr/bin/wget",
+      "/etc/wgetrc",
+      "/usr/share/man/man1/wget.1"
+    ]
+  }
+}
