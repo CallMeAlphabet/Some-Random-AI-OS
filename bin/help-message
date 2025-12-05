@@ -1,1 +1,208 @@
+#!/bin/bash
+# MiniUnix Help System
+# Displays categorized help information
 
+show_main_help() {
+    cat << 'EOF'
+MiniUnix v2.1 - Available Commands
+===================================
+
+BASIC FILE SYSTEM OPERATIONS:
+  ls        List directory contents
+  cd        Change directory
+  pwd       Print working directory
+  mkdir     Create directory
+  rmdir     Remove empty directory
+  touch     Create empty file or update timestamp
+  rm        Remove files or directories
+  cp        Copy files or directories
+  mv        Move or rename files
+  ln        Create links between files
+
+FILE VIEWING AND EDITING:
+  cat       Concatenate and display files
+  head      Output first part of files
+  tail      Output last part of files
+  less      View file contents with pagination
+  nano      Simple text editor
+  vim       Vi IMproved text editor
+  echo      Display text or write to files
+
+FILE SEARCH AND MANIPULATION:
+  find      Search for files in directory hierarchy
+  grep      Search text patterns in files
+  sed       Stream editor for text manipulation
+  awk       Pattern scanning and text processing
+  wc        Word, line, character, and byte count
+  sort      Sort lines of text
+  uniq      Report or omit repeated lines
+  diff      Compare files line by line
+
+FILE PERMISSIONS AND OWNERSHIP:
+  chmod     Change file permissions
+  chown     Change file owner and group
+
+COMPRESSION AND ARCHIVING:
+  tar       Archive files
+  gzip      Compress files
+  gunzip    Decompress gzip files
+  zip       Package and compress files
+  unzip     Extract zip archives
+
+SYSTEM INFORMATION:
+  uname     Print system information
+  hostname  Show or set system hostname
+  whoami    Print current username
+  id        Print user identity
+  uptime    Show system uptime and load
+  date      Display or set system date and time
+  cal       Display calendar
+  df        Report file system disk space usage
+  du        Estimate file space usage
+  free      Display memory usage
+
+PROCESS MANAGEMENT:
+  ps        Report process status
+  top       Display and update sorted process information
+  htop      Interactive process viewer (install: pkg install htop)
+  kill      Send signal to process
+  killall   Kill processes by name
+  jobs      List active jobs
+  bg        Resume job in background
+  fg        Resume job in foreground
+  nohup     Run command immune to hangups
+
+NETWORKING:
+  ping      Send ICMP echo requests
+  curl      Transfer data from or to a server
+  wget      Network downloader
+  netstat   Network statistics
+  ifconfig  Configure network interfaces
+  ip        Show/manipulate routing and devices
+  ssh       OpenSSH client (remote login)
+  scp       Secure copy (remote file copy)
+  browser   Text-based web browser with real search
+
+PACKAGE MANAGEMENT:
+  pkg       MiniUnix package manager
+    Commands: update, upgrade, install, remove, search, list, info, clean
+
+DEVELOPMENT TOOLS:
+  git       Distributed version control system
+  python3   Python interpreter
+  node      Node.js JavaScript runtime (install: pkg install nodejs)
+  gcc       GNU C/C++ compiler (install: pkg install gcc)
+  make      Build automation tool (install: pkg install make)
+
+APPLICATIONS:
+  calculator  Interactive calculator
+
+SHELL FEATURES:
+  history   Command history
+  alias     Create command alias
+  unalias   Remove alias
+  export    Set environment variable
+  env       Display environment variables
+  source    Execute commands from file
+  clear     Clear terminal screen
+  exit      Exit the shell
+  help      Show help information
+  man       Display manual pages
+
+SHELL OPERATORS:
+  |         Pipe output to another command
+  >         Redirect output (overwrite)
+  >>        Redirect output (append)
+  <         Redirect input
+  2>        Redirect stderr
+  &>        Redirect stdout and stderr
+  ;         Run commands sequentially
+  &&        Run next if previous succeeds
+  ||        Run next if previous fails
+  &         Run command in background
+  $()       Command substitution
+
+For detailed help on a specific command, use:
+  man [command]    - Full manual page
+  help [command]   - Quick help
+  [command] --help - Command-specific help
+
+Examples:
+  man ls
+  help cd
+  grep --help
+
+Documentation: https://docs.miniunix.org
+Support: https://support.miniunix.org
+EOF
+}
+
+show_command_help() {
+    local cmd="$1"
+    
+    # Check if command exists in commands.index
+    # This would normally parse the JSON, but for simulation we provide basic help
+    
+    case "$cmd" in
+        ls)
+            cat << 'EOF'
+ls - List directory contents
+
+USAGE:
+  ls [OPTIONS] [FILE...]
+
+OPTIONS:
+  -l    Use long listing format
+  -a    Show hidden files (starting with .)
+  -h    Human-readable sizes
+  -R    Recursive listing
+  -t    Sort by modification time
+  -r    Reverse sort order
+  -S    Sort by file size
+
+EXAMPLES:
+  ls
+  ls -la
+  ls -lh /home/user
+  ls -lR
+
+For more details, use: man ls
+EOF
+            ;;
+        cd)
+            cat << 'EOF'
+cd - Change directory
+
+USAGE:
+  cd [DIRECTORY]
+
+SPECIAL PATHS:
+  ~     Home directory
+  -     Previous directory
+  ..    Parent directory
+  .     Current directory
+  /     Root directory
+
+EXAMPLES:
+  cd /home/user/Documents
+  cd ~
+  cd ..
+  cd -
+
+For more details, use: man cd
+EOF
+            ;;
+        *)
+            echo "help: no help available for '$cmd'"
+            echo "Try 'man $cmd' for detailed information"
+            return 1
+            ;;
+    esac
+}
+
+# Main execution
+if [ $# -eq 0 ]; then
+    show_main_help
+else
+    show_command_help "$1"
+fi
