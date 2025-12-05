@@ -17,16 +17,16 @@ Fetch the contents of the following files in this exact order:
 7. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/resolv.conf
 8. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/init.d/boot.sh
 9. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/ai/capabilities
-10. /etc/ai/limitations
-11. /lib/error-messages
-12. /proc/cpuinfo
-13. /proc/meminfo
-14. /proc/version
-15. /proc/loadavg
-16. /bin/commands.index
-17. /database/installed-packages.json
-18. /database/available-packages.json
-19. /database/running-processes.json
+10. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/ai/limitations
+11. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/lib/error-messages
+12. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/proc/cpuinfo
+13. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/proc/meminfo
+14. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/proc/version
+15. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/proc/loadavg
+16. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/bin/commands.index
+17. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/database/installed-packages.json
+18. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/database/available-packages.json
+19. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/database/running-processes.json
 
 
 STEP 2: INITIALIZE SYSTEM STATE
