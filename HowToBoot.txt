@@ -8,15 +8,15 @@ STEP 1: FETCH CONFIGURATION FILES
 ----------------------------------
 Fetch the contents of the following files in this exact order:
 
-1. /config.cfg
-2. /etc/os-release
-3. /etc/hostname
-4. /etc/passwd
-5. /etc/hosts
-6. /etc/fstab
-7. /etc/resolv.conf
-8. /etc/init.d/boot.sh
-9. /etc/ai/capabilities
+1. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/config.cfg
+2. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/os-release
+3. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/hostname
+4. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/passwd
+5. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/hosts
+6. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/fstab
+7. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/resolv.conf
+8. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/init.d/boot.sh
+9. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/ai/capabilities
 10. /etc/ai/limitations
 11. /lib/error-messages
 12. /proc/cpuinfo
