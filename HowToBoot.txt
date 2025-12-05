@@ -27,6 +27,7 @@ Fetch the contents of the following files in this exact order:
 17. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/database/installed-packages.json
 18. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/database/available-packages.json
 19. https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/database/running-processes.json
+20: https://raw.githubusercontent.com/CallMeAlphabet/Some-Random-AI-OS/refs/heads/main/etc/modt
 
 
 STEP 2: INITIALIZE SYSTEM STATE
