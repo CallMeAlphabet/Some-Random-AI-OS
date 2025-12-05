@@ -1,0 +1,91 @@
+{
+  "processes": [
+    {
+      "pid": 1,
+      "user": "root",
+      "cpu": "0.0",
+      "mem": "0.3",
+      "vsz": "168948",
+      "rss": "11832",
+      "tty": "?",
+      "stat": "Ss",
+      "start": "00:00",
+      "time": "0:01",
+      "command": "/sbin/init",
+      "ppid": 0,
+      "priority": 20,
+      "nice": 0
+    },
+    {
+      "pid": 234,
+      "user": "root",
+      "cpu": "0.0",
+      "mem": "0.1",
+      "vsz": "28564",
+      "rss": "3256",
+      "tty": "?",
+      "stat": "Ss",
+      "start": "00:00",
+      "time": "0:00",
+      "command": "/usr/sbin/sshd",
+      "ppid": 1,
+      "priority": 20,
+      "nice": 0
+    },
+    {
+      "pid": 312,
+      "user": "root",
+      "cpu": "0.0",
+      "mem": "0.2",
+      "vsz": "42188",
+      "rss": "7432",
+      "tty": "?",
+      "stat": "Ssl",
+      "start": "00:00",
+      "time": "0:00",
+      "command": "/usr/sbin/networkd",
+      "ppid": 1,
+      "priority": 20,
+      "nice": 0
+    },
+    {
+      "pid": 445,
+      "user": "root",
+      "cpu": "0.0",
+      "mem": "0.1",
+      "vsz": "15892",
+      "rss": "2144",
+      "tty": "?",
+      "stat": "Ss",
+      "start": "00:00",
+      "time": "0:00",
+      "command": "/usr/sbin/cron",
+      "ppid": 1,
+      "priority": 20,
+      "nice": 0
+    },
+    {
+      "pid": 567,
+      "user": "user",
+      "cpu": "0.0",
+      "mem": "0.2",
+      "vsz": "21476",
+      "rss": "5124",
+      "tty": "tty1",
+      "stat": "Ss",
+      "start": "00:01",
+      "time": "0:00",
+      "command": "-bash",
+      "ppid": 1,
+      "priority": 20,
+      "nice": 0
+    }
+  ],
+  "stats": {
+    "total": 89,
+    "running": 1,
+    "sleeping": 88,
+    "stopped": 0,
+    "zombie": 0
+  }
+}
